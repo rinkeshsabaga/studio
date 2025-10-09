@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-home",
+      "description": "A truck driving on a highway at sunset, representing logistics and transport.",
+      "imageUrl": "https://picsum.photos/seed/roadship1/1920/1080",
+      "imageHint": "truck highway"
+    },
+    {
+      "id": "city-mumbai",
+      "description": "The skyline of Mumbai, India.",
+      "imageUrl": "https://picsum.photos/seed/mumbai/600/400",
+      "imageHint": "mumbai india"
+    },
+    {
+      "id": "city-delhi",
+      "description": "The India Gate in Delhi, India.",
+      "imageUrl": "https://picsum.photos/seed/delhi/600/400",
+      "imageHint": "delhi india gate"
+    },
+    {
+      "id": "city-bangalore",
+      "description": "A modern tech park in Bangalore, India.",
+      "imageUrl": "https://picsum.photos/seed/bangalore/600/400",
+      "imageHint": "bangalore tech park"
+    },
+    {
+      "id": "city-chennai",
+      "description": "A traditional temple in Chennai, India.",
+      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
+      "imageHint": "chennai temple"
+    },
+    {
+      "id": "about-us",
+      "description": "Interior of a modern logistics warehouse with shelves and packages.",
+      "imageUrl": "https://picsum.photos/seed/warehouse/600/400",
+      "imageHint": "logistics warehouse"
+    }
+  ]
 }
