@@ -45,7 +45,7 @@ export default function Home() {
               We offer a comprehensive range of logistics services tailored to meet your business needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <Card className="text-center transition-transform transform hover:-translate-y-2">
               <CardHeader>
                 <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit">
