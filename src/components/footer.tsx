@@ -36,15 +36,17 @@ export default function Footer() {
           <div>
             <h3 className="font-headline font-semibold mb-4">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic text-muted-foreground">
-              <p>123 Logistics Lane, Mumbai, MH 400001</p>
+              <p>MoveFlex Logistics Private Limited,</p>
+              <p>Achitpur Khajuraul Mirzapur,</p>
+              <p> Uttar Pradesh India 231305</p>
               <p>
                 <a href="tel:+911234567890" className="hover:text-primary transition-colors">
-                  +91 12345 67890
+                  +919151829990
                 </a>
               </p>
               <p>
                 <a href="mailto:contact@roadship.com" className="hover:text-primary transition-colors">
-                  contact@roadship.com
+                  contact@roadship.in
                 </a>
               </p>
             </address>
@@ -70,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} RoadShip Logistics. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MoveFlex Logistics Private Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>
