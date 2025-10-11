@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { Truck, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const socialLinks = [
-  { Icon: Facebook, href: '#', name: 'Facebook' },
+  { Icon: Facebook, href: 'https://www.facebook.com/GoRoadship/', name: 'Facebook' },
   { Icon: Twitter, href: '#', name: 'Twitter' },
   { Icon: Linkedin, href: '#', name: 'LinkedIn' },
-  { Icon: Instagram, href: '#', name: 'Instagram' },
+  { Icon: Instagram, href: 'https://www.instagram.com/roadship.in/#', name: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <h3 className="font-headline font-semibold mb-4">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic text-muted-foreground">
-              <p>MoveFlex Logistics Private Limited,</p>
+              <p>MOVEFLEX LOGISTICS PVT LTD,</p>
               <p>Achitpur Khajuraul Mirzapur,</p>
               <p> Uttar Pradesh India 231305</p>
               <p>
