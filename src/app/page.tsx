@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Truck, Package, Clock, ArrowRight, HelpCircle } from 'lucide-react';
+import { Truck, Package, Clock, ArrowRight, HelpCircle, IndianRupee, ShieldCheck, Headset} from 'lucide-react';
 import BookingForm from '@/components/booking-form';
 import CityShowcase from '@/components/city-showcase';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -51,24 +51,24 @@ export default function Home() {
                 <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit">
                   <Truck className="w-8 h-8" />
                 </div>
-                <CardTitle className="mt-4 font-headline">Full & Part Truckload</CardTitle>
+                <CardTitle className="mt-4 font-headline">Best Truck Rates</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Reliable and cost-effective solutions for both full and partial truckload shipments.
+                  Transparent and best truck rates across India.
                 </p>
               </CardContent>
             </Card>
             <Card className="text-center transition-transform transform hover:-translate-y-2">
               <CardHeader>
                 <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit">
-                  <Package className="w-8 h-8" />
+                  <ShieldCheck className="w-8 h-8" />
                 </div>
-                <CardTitle className="mt-4 font-headline">Express Cargo</CardTitle>
+                <CardTitle className="mt-4 font-headline">Verified Trucks</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Swift and secure delivery for your time-sensitive parcels and documents.
+                  Verified trucks from 5000+ truck owners from India.
                 </p>
               </CardContent>
             </Card>
@@ -77,11 +77,24 @@ export default function Home() {
                 <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit">
                   <Clock className="w-8 h-8" />
                 </div>
-                <CardTitle className="mt-4 font-headline">Guaranteed On-Time</CardTitle>
+                <CardTitle className="mt-4 font-headline">Ontime Delivery</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Punctuality is our promise. We ensure your shipments arrive on schedule, every time.
+                  Realtime truck tracking to delivery your goods on time.
+                </p>
+              </CardContent>
+            </Card>
+             <Card className="text-center transition-transform transform hover:-translate-y-2">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit">
+                  <Headset className="w-8 h-8" />
+                </div>
+                <CardTitle className="mt-4 font-headline">Customer Service</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  We utilise our 3+ years expertise and provide 24/7 service.
                 </p>
               </CardContent>
             </Card>
