@@ -40,7 +40,7 @@ export default function BookingForm() {
     setLoading(true);
   
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
+      const response = await fetch(`https://webhook.site/b626cf0b-f698-4a49-9fbb-a6149da264ca`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),
