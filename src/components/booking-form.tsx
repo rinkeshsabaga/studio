@@ -41,7 +41,8 @@ export default function BookingForm() {
   
     try {
       // const response = await fetch(`https://webhook.site/b626cf0b-f698-4a49-9fbb-a6149da264ca`, {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/exec`, {
+      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/exec`, {
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbzFyf_n9FGuuqnDXo4NIfVq-Gl-p5ttWT60Gjh4e7BD_6ja8ryIeH7MILYw8LGUBzTi_Q/exec`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Origin": "https://rinkeshsabaga.github.io/"},
         // headers: { "Content-Type": "application/json"},
