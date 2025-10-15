@@ -7,16 +7,22 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
 
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=YOUR_APP_ID';
+const APPLE_URL = 'https://apps.apple.com/app/idYOUR_APP_ID';
+
 export default function BookingForm() {
+  const [mode, setMode] = useState<'shipper' | 'owner'>('shipper');
+
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [phone, setPhone] = useState('');
-  const [loading, setLoading] = useState(false); // <-- new loading state
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+    if (mode !== 'shipper') return;
+
     if (!origin || !destination || !phone) {
       toast({
         variant: "destructive",
@@ -25,7 +31,7 @@ export default function BookingForm() {
       });
       return;
     }
-  
+
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!phoneRegex.test(phone)) {
       toast({
@@ -35,28 +41,27 @@ export default function BookingForm() {
       });
       return;
     }
-  
+
     const bookingData = { origin, destination, phone };
     setLoading(true);
-  
+
     try {
-      // const response = await fetch(`https://webhook.site/b626cf0b-f698-4a49-9fbb-a6149da264ca`, {
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/exec`, {
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbzFyf_n9FGuuqnDXo4NIfVq-Gl-p5ttWT60Gjh4e7BD_6ja8ryIeH7MILYw8LGUBzTi_Q/exec`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/exec`, {
         method: "POST",
-        headers: { "Content-Type": "application/json"},
+        headers: {
+          "Content-Type": "application/json",
+          "Origin": "https://rinkeshsabaga.github.io/",
+        },
         body: JSON.stringify(bookingData),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok && result.status === "success") {
         toast({
           title: "✅ Success",
           description: result.message || "Row added successfully.",
         });
-  
-        // Reset form
         setOrigin('');
         setDestination('');
         setPhone('');
@@ -78,69 +83,135 @@ export default function BookingForm() {
       setLoading(false);
     }
   };
-  
 
   return (
     <Card className="w-full shadow-lg">
-      <CardContent className="p-4">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-2 items-center"
-        >
-          <div className="relative w-full lg:col-span-1">
-            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Origin City"
-              className="pl-10"
-              value={origin}
-              onChange={(e) => setOrigin(e.target.value)}
-              aria-label="Origin City"
+      <CardContent className="p-4 space-y-4">
+
+        {/* Segmented tabs like your screenshot */}
+        <div className="rounded-2xl border bg-white p-1 shadow-sm">
+          <div className="grid grid-cols-2 gap-1">
+            <button
+              type="button"
+              aria-pressed={mode === 'shipper'}
+              onClick={() => setMode('shipper')}
               disabled={loading}
-            />
+              className={[
+                "rounded-xl px-4 py-3 text-center transition",
+                mode === 'shipper'
+                  ? "bg-white shadow font-semibold text-blue-600"
+                  : "bg-transparent text-slate-700 hover:bg-slate-50"
+              ].join(' ')}
+            >
+              <div className="leading-tight">Book Truck</div>
+              <div className="text-xs text-slate-500">I'm Shipper</div>
+            </button>
+
+            <button
+              type="button"
+              aria-pressed={mode === 'owner'}
+              onClick={() => setMode('owner')}
+              disabled={loading}
+              className={[
+                "rounded-xl px-4 py-3 text-center transition",
+                mode === 'owner'
+                  ? "bg-white shadow font-semibold text-blue-600"
+                  : "bg-transparent text-slate-700 hover:bg-slate-50"
+              ].join(' ')}
+            >
+              <div className="leading-tight">Find Load</div>
+              <div className="text-xs text-slate-500">I'm Truck Owner</div>
+            </button>
+          </div>
+        </div>
+
+        {/* Content area */}
+        {mode === 'owner' ? (
+
+          <div className="text-sm text-slate-600">
+            To find load you can contact us on {' '}
+            <a href="tel:+919876543210" className="font-medium underline underline-offset-4">
+              +91 98765 43210
+            </a>
           </div>
 
-          <div className="relative w-full lg:col-span-1">
-            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Destination City"
-              className="pl-10"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              aria-label="Destination City"
-              disabled={loading}
-            />
-          </div>
 
-          <div className="relative w-full md:col-span-2 lg:col-span-1">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="tel"
-              placeholder="Phone Number"
-              className="pl-10"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              aria-label="Phone Number"
-              disabled={loading}
-            />
-          </div>
-
-          <Button
-            type="submit"
-            className="w-full md:col-span-2 lg:col-span-3 flex items-center justify-center"
-            disabled={loading}
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 items-center"
           >
-            {loading ? (
-              <>
-                <Loader2 className="animate-spin h-5 w-5 mr-2" /> Processing...
-              </>
-            ) : (
-              "Get Quote"
-            )}
-          </Button>
-        </form>
+            <div className="w-full lg:col-span-1">
+              <label className="mb-1 block font-semibold">From:</label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-green-500" />
+                <Input
+                  type="text"
+                  placeholder="Enter your loading city"
+                  className="pl-7"
+                  value={origin}
+                  onChange={(e) => setOrigin(e.target.value)}
+                  aria-label="Origin City"
+                  disabled={loading}
+                  autoComplete="address-level2"
+                />
+              </div>
+            </div>
+
+            <div className="w-full lg:col-span-1">
+              <label className="mb-1 block font-semibold">To:</label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-red-500" />
+                <Input
+                  type="text"
+                  placeholder="Enter your unloading city"
+                  className="pl-7"
+                  value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
+                  aria-label="Destination City"
+                  disabled={loading}
+                  autoComplete="address-level2"
+                />
+              </div>
+            </div>
+
+            <div className="w-full md:col-span-2 lg:col-span-1">
+              <label className="mb-1 block font-semibold" htmlFor="phone">Phone</label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="pl-10"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  aria-label="Phone Number"
+                  disabled={loading}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoComplete="tel"
+                />
+              </div>
+            </div>
+
+            <Button
+              type="submit"
+              className="w-full md:col-span-2 lg:col-span-3 flex items-center justify-center"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="animate-spin h-5 w-5 mr-2" /> Processing...
+                </>
+              ) : (
+                "Book"
+              )}
+            </Button>
+          </form>
+        )}
       </CardContent>
     </Card>
   );
 }
+
