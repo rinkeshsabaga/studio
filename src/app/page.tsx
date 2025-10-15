@@ -32,10 +32,9 @@ export default function Home() {
             Your trusted partner for fast, reliable, and efficient shipping across India.
           </p>
           <div className="max-w-2xl mx-auto">
-            <button type="button">Book Trucker</button>
+        
             <BookingForm />
-            <button type="button">Find Load</button>
-            <p>To Find load Kindly reachout to us on +919151829990</p>
+           
           </div>
         </div>
       </section>
