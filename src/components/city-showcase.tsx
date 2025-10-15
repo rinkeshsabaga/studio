@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const cityIds = ['city-mumbai', 'city-delhi', 'city-bangalore', 'city-chennai'];
+const cityIds = ['city-mumbai', 'city-gurugram', 'city-bangalore', 'city-chennai','city-hydrabad','city-ahemedabad'];
 
 export default function CityShowcase() {
   const cities = PlaceHolderImages.filter(p => cityIds.includes(p.id));
@@ -16,7 +16,7 @@ export default function CityShowcase() {
             Our network spans across all major metropolitan areas, ensuring your cargo reaches its destination.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {cities.map((city) => (
             <Card key={city.id} className="overflow-hidden group">
               <CardContent className="p-0">
