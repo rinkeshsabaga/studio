@@ -8,27 +8,39 @@
     },
     {
       "id": "city-mumbai",
-      "description": "The skyline of Mumbai, India.",
+      "description": "Mumbai",
       "imageUrl": "https://picsum.photos/seed/mumbai/600/400",
-      "imageHint": "mumbai india"
+      "imageHint": "mumbai"
     },
     {
-      "id": "city-delhi",
-      "description": "The India Gate in Delhi, India.",
+      "id": "city-gurugram",
+      "description": "Gurugram",
       "imageUrl": "https://picsum.photos/seed/delhi/600/400",
-      "imageHint": "delhi india gate"
+      "imageHint": "gurugram"
     },
     {
       "id": "city-bangalore",
-      "description": "A modern tech park in Bangalore, India.",
+      "description": "Bangalore",
       "imageUrl": "https://picsum.photos/seed/bangalore/600/400",
-      "imageHint": "bangalore tech park"
+      "imageHint": "bangalore"
     },
     {
       "id": "city-chennai",
-      "description": "A traditional temple in Chennai, India.",
+      "description": "Chennai",
       "imageUrl": "https://picsum.photos/seed/chennai/600/400",
-      "imageHint": "chennai temple"
+      "imageHint": "chennai"
+    },
+    {
+      "id": "city-ahemedabad",
+      "description": "Ahmedabad",
+      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
+      "imageHint": "ahmedabad"
+    },
+    {
+      "id": "city-hydrabad",
+      "description": "Hydrabad",
+      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
+      "imageHint": "hydrabad"
     },
     {
       "id": "about-us",
