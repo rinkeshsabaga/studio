@@ -24,10 +24,20 @@ export default function AboutPage() {
               <h2 className="text-3xl font-headline font-bold mb-4">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded with the goal of revolutionizing the Indian logistics landscape, RoadShip started as a small operation with a big vision: to make shipping simple, transparent, and reliable for businesses of all sizes.
+                 At Moveflex Logistics Pvt. Ltd., we believe logistics is not just about moving goods — it’s about moving trust, time, and growth.
+Our journey began with a simple mission: to simplify transportation for businesses and truck owners across India.
+
                 </p>
                 <p>
-                  Over the years, we have grown our network, embraced technology, and built a team of dedicated professionals who are passionate about logistics. Today, we are proud to be a leading logistics provider, helping businesses thrive by connecting them to markets across the country.
+                  What started as a small idea has now grown into a powerful logistics network connecting shippers, transporters, and fleet owners through technology and transparency. We built Moveflex to solve everyday problems faced in the Indian transport industry — from delayed payments to lack of trusted partners.
+
+                </p>
+                <p>
+                Today, Moveflex stands as a modern-age logistics partner, offering reliable transportation, fair brokerage, and real-time support. Our team works tirelessly to ensure every load reaches its destination safely, quickly, and cost-effectively
+                </p>
+                <p>
+                Driven by innovation and integrity, Moveflex continues to grow — one successful delivery at a time.
+Because for us, logistics is not just business — it’s a responsibility.
                 </p>
               </div>
             </div>
