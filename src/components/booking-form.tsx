@@ -131,7 +131,7 @@ export default function BookingForm() {
           <div className="text-sm text-slate-600">
             To find load you can contact us on {' '}
             <a href="tel:+919876543210" className="font-medium underline underline-offset-4">
-              +91 98765 43210
+              +919151829990
             </a>
           </div>
 
