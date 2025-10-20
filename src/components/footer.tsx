@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} MoveFlex Logistics Private Limited. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MOVEFLEX LOGISTICS PRIVATE LIMITED. All rights reserved.</p>
         </div>
       </div>
     </footer>
