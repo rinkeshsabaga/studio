@@ -70,7 +70,7 @@ export default function Header() {
             "font-bold font-headline text-2xl tracking-tight transition-colors duration-300",
             scrolled ? "text-slate-900" : "text-white"
           )}>
-            RoadShip
+           ROADSHIP
           </span>
         </Link>
         
@@ -110,7 +110,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center space-x-3 mb-10 mt-4">
                   <Image src="/logo.png" alt="RoadShip Logo" width={40} height={40} className="object-contain rounded-lg" />
-                  <span className="font-bold font-headline text-2xl text-slate-900">RoadShip</span>
+                  <span className="font-bold font-headline text-2xl text-slate-900">ROADSHIP</span>
                 </div>
                 
                 <div className="flex flex-col space-y-2 flex-1">
