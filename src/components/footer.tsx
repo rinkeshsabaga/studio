@@ -24,7 +24,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/50 overflow-hidden">
                 <Image src="/logo.png" alt="RoadShip Logo" width={40} height={40} className="object-contain" />
               </div>
-              <span className="text-2xl font-bold font-headline text-white tracking-tight">RoadShip</span>
+              <span className="text-2xl font-bold font-headline text-white tracking-tight">ROADSHIP</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Modernizing India's freight network. We combine intelligent routing, verified fleets, and 24/7 support to deliver your cargo safely and on time.
