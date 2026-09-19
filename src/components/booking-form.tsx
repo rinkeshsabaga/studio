@@ -84,11 +84,11 @@ export default function BookingForm() {
   };
 
   return (
-    <Card className="w-full shadow-lg">
-      <CardContent className="p-4 space-y-4">
+    <Card className="w-full shadow-none border-0 bg-transparent">
+      <CardContent className="p-0 space-y-6">
 
         {/* Segmented tabs like your screenshot */}
-        <div className="rounded-2xl border bg-white p-1 shadow-sm">
+        <div className="rounded-2xl bg-gray-100/80 p-1 backdrop-blur-sm shadow-inner">
           <div className="grid grid-cols-2 gap-1">
             <button
               type="button"
@@ -96,14 +96,14 @@ export default function BookingForm() {
               onClick={() => setMode('shipper')}
               disabled={loading}
               className={[
-                "rounded-xl px-4 py-3 text-center transition",
+                "rounded-xl px-4 py-3 text-center transition-all duration-300",
                 mode === 'shipper'
-                  ? "bg-white shadow font-semibold text-blue-600"
-                  : "bg-transparent text-slate-700 hover:bg-slate-50"
+                  ? "bg-white shadow-md font-semibold text-primary scale-100"
+                  : "bg-transparent text-slate-600 hover:text-slate-900 scale-95 hover:scale-100"
               ].join(' ')}
             >
-              <div className="leading-tight">Book Truck</div>
-              <div className="text-xs text-slate-500">I'm Shipper</div>
+              <div className="leading-tight text-base">Book Truck</div>
+              <div className="text-xs opacity-70">I'm a Shipper</div>
             </button>
 
             <button
@@ -112,42 +112,39 @@ export default function BookingForm() {
               onClick={() => setMode('owner')}
               disabled={loading}
               className={[
-                "rounded-xl px-4 py-3 text-center transition",
+                "rounded-xl px-4 py-3 text-center transition-all duration-300",
                 mode === 'owner'
-                  ? "bg-white shadow font-semibold text-blue-600"
-                  : "bg-transparent text-slate-700 hover:bg-slate-50"
+                  ? "bg-white shadow-md font-semibold text-primary scale-100"
+                  : "bg-transparent text-slate-600 hover:text-slate-900 scale-95 hover:scale-100"
               ].join(' ')}
             >
-              <div className="leading-tight">Find Load</div>
-              <div className="text-xs text-slate-500">I'm Truck Owner</div>
+              <div className="leading-tight text-base">Find Load</div>
+              <div className="text-xs opacity-70">I'm a Truck Owner</div>
             </button>
           </div>
         </div>
 
         {/* Content area */}
         {mode === 'owner' ? (
-
-          <div className="text-sm text-slate-600">
-            To find load you can contact us on {' '}
-            <a href="tel:+919876543210" className="font-medium underline underline-offset-4">
-              +919151829990
+          <div className="text-center py-8 px-4 bg-gray-50 rounded-2xl border border-gray-100">
+            <p className="text-base text-slate-600 mb-2">To find a load, please contact our support team:</p>
+            <a href="tel:+919151829990" className="inline-flex items-center gap-2 text-2xl font-bold text-primary hover:text-blue-700 transition-colors">
+              <Phone className="w-6 h-6" /> +91 91518 29990
             </a>
           </div>
-
-
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 items-center"
+            className="flex flex-col gap-4"
           >
-            <div className="w-full lg:col-span-1">
-              <label className="mb-1 block font-semibold">From:</label>
+            <div className="w-full">
+              <label className="mb-1.5 block text-sm font-semibold text-slate-700">From (Origin)</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-green-500" />
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                 <Input
                   type="text"
                   placeholder="Enter your loading city"
-                  className="pl-7"
+                  className="pl-10 h-12 rounded-xl bg-gray-50 border-gray-200 focus-visible:ring-primary focus-visible:bg-white transition-all text-base"
                   value={origin}
                   onChange={(e) => setOrigin(e.target.value)}
                   aria-label="Origin City"
@@ -157,14 +154,14 @@ export default function BookingForm() {
               </div>
             </div>
 
-            <div className="w-full lg:col-span-1">
-              <label className="mb-1 block font-semibold">To:</label>
+            <div className="w-full">
+              <label className="mb-1.5 block text-sm font-semibold text-slate-700">To (Destination)</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-red-500" />
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
                 <Input
                   type="text"
                   placeholder="Enter your unloading city"
-                  className="pl-7"
+                  className="pl-10 h-12 rounded-xl bg-gray-50 border-gray-200 focus-visible:ring-primary focus-visible:bg-white transition-all text-base"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   aria-label="Destination City"
@@ -174,15 +171,15 @@ export default function BookingForm() {
               </div>
             </div>
 
-            <div className="w-full md:col-span-2 lg:col-span-1">
-              <label className="mb-1 block font-semibold" htmlFor="phone">Phone</label>
+            <div className="w-full">
+              <label className="mb-1.5 block text-sm font-semibold text-slate-700" htmlFor="phone">Phone Number</label>
               <div className="relative">
-                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="Phone Number"
-                  className="pl-10"
+                  placeholder="10-digit mobile number"
+                  className="pl-10 h-12 rounded-xl bg-gray-50 border-gray-200 focus-visible:ring-primary focus-visible:bg-white transition-all text-base"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   aria-label="Phone Number"
@@ -196,7 +193,8 @@ export default function BookingForm() {
 
             <Button
               type="submit"
-              className="w-full md:col-span-2 lg:col-span-3 flex items-center justify-center"
+              size="lg"
+              className="w-full h-14 mt-2 rounded-xl text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
               disabled={loading}
             >
               {loading ? (
@@ -204,7 +202,7 @@ export default function BookingForm() {
                   <Loader2 className="animate-spin h-5 w-5 mr-2" /> Processing...
                 </>
               ) : (
-                "Book"
+                "Get Best Price"
               )}
             </Button>
           </form>

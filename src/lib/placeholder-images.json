@@ -2,50 +2,50 @@
   "placeholderImages": [
     {
       "id": "hero-home",
-      "description": "A truck driving on a highway at sunset, representing logistics and transport.",
-      "imageUrl": "https://picsum.photos/seed/roadship1/1920/1080",
-      "imageHint": "truck highway"
+      "description": "A modern semi-truck driving on a highway at sunset, representing professional logistics.",
+      "imageUrl": "/hero.jpg",
+      "imageHint": "truck highway sunset"
     },
     {
       "id": "city-mumbai",
       "description": "Mumbai",
-      "imageUrl": "https://picsum.photos/seed/mumbai/600/400",
-      "imageHint": "mumbai"
+      "imageUrl": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "mumbai gateway of india"
     },
     {
       "id": "city-gurugram",
       "description": "Gurugram",
-      "imageUrl": "https://picsum.photos/seed/delhi/600/400",
-      "imageHint": "gurugram"
+      "imageUrl": "/gurugram.jpg",
+      "imageHint": "cyber city gurugram"
     },
     {
       "id": "city-bangalore",
       "description": "Bangalore",
-      "imageUrl": "https://picsum.photos/seed/bangalore/600/400",
-      "imageHint": "bangalore"
+      "imageUrl": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "bangalore tech park"
     },
     {
       "id": "city-chennai",
       "description": "Chennai",
-      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
-      "imageHint": "chennai"
+      "imageUrl": "/chennai.jpg",
+      "imageHint": "chennai central"
     },
     {
       "id": "city-ahemedabad",
       "description": "Ahmedabad",
-      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
-      "imageHint": "ahmedabad"
+      "imageUrl": "/ahmedabad.jpg",
+      "imageHint": "ahmedabad riverfront"
     },
     {
       "id": "city-hydrabad",
-      "description": "Hydrabad",
-      "imageUrl": "https://picsum.photos/seed/chennai/600/400",
-      "imageHint": "hydrabad"
+      "description": "Hyderabad",
+      "imageUrl": "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "charminar hyderabad"
     },
     {
       "id": "about-us",
-      "description": "Interior of a modern logistics warehouse with shelves and packages.",
-      "imageUrl": "https://picsum.photos/seed/warehouse/600/400",
+      "description": "Interior of a modern logistics warehouse with shelves and automated vehicles.",
+      "imageUrl": "/warehouse.jpg",
       "imageHint": "logistics warehouse"
     }
   ]
